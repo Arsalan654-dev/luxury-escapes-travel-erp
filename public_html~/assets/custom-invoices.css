@@ -1,0 +1,194 @@
+/* ===== FULL-PAGE INVOICE - ZERO SPACE ===== */
+
+:root {
+  --luxury-navy: #0f1f3d;
+  --luxury-navy-deep: #142d5e;
+  --luxury-gold: #c9a84c;
+}
+
+.printable-voucher-card,
+.printable-transport-voucher,
+.printable-visa-voucher,
+.hotel-voucher-print-shell {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 999999 !important;
+  background: #fff !important;
+}
+
+.printable-transport-voucher,
+.printable-visa-voucher,
+.hotel-voucher-print-shell {
+  max-width: 100% !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+}
+
+.print-backdrop,
+.voucher-print-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.printable-voucher-card > div:first-child,
+.printable-transport-voucher > div:first-child,
+.printable-visa-voucher > div:first-child,
+.hotel-voucher-print-shell > div:first-child {
+  overflow-y: auto !important;
+  min-height: 100% !important;
+}
+
+.printable-voucher-card .invoice-brand-logo,
+.printable-transport-voucher .invoice-brand-logo,
+.printable-visa-voucher .invoice-brand-logo,
+.hotel-voucher-print-shell .invoice-brand-logo {
+  position: absolute !important;
+  top: 18px !important;
+  right: 18px !important;
+  width: 86px !important;
+  max-width: 86px !important;
+  height: auto !important;
+  z-index: 20 !important;
+  filter: drop-shadow(0 10px 18px rgba(15, 31, 61, 0.18));
+}
+
+@media print {
+  @page {
+    size: A4 portrait !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html, body {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #fff !important;
+  }
+
+  body > * {
+    visibility: hidden !important;
+  }
+
+  aside, header, nav, .print\:hidden, .print\:\!hidden,
+  .print-backdrop, .voucher-print-backdrop {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .printable-voucher-card,
+  .printable-transport-voucher,
+  .printable-visa-voucher,
+  .hotel-voucher-print-shell,
+  .printable-voucher-card *,
+  .printable-transport-voucher *,
+  .printable-visa-voucher *,
+  .hotel-voucher-print-shell * {
+    visibility: visible !important;
+  }
+
+  .printable-voucher-card,
+  .printable-transport-voucher,
+  .printable-visa-voucher,
+  .hotel-voucher-print-shell {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    z-index: 999999 !important;
+  }
+
+  .printable-voucher-card > div:first-child,
+  .printable-transport-voucher > div:first-child,
+  .printable-visa-voucher > div:first-child,
+  .hotel-voucher-print-shell > div:first-child {
+    max-height: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+  }
+
+  .hotel-voucher-layout,
+  .printable-voucher-card > div,
+  .printable-transport-voucher > div,
+  .printable-visa-voucher > div,
+  .hotel-voucher-print-shell > div {
+    page-break-inside: avoid !important;
+  }
+}
+
+.vendor-info-banner {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0 16px 8px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.vendor-info-banner .vendor-detail-label {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.vendor-info-banner .vendor-detail-value {
+  font-size: 10px;
+  color: #212529;
+  font-weight: 500;
+}
+
+.vendor-info-banner .vendor-detail-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.vendor-info-banner .vendor-detail-col {
+  flex: 1;
+  min-width: 120px;
+}
+
+@media print {
+  .vendor-info-banner {
+    background: #f8f9fa !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
